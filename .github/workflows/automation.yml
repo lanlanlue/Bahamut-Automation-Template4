@@ -2,7 +2,7 @@ name: 自動化
 
 on:
   schedule:
-    - cron: "0 5,17 * * *"
+    - cron: "5 4,16,22 * * *"
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - name: Bahamut Automation
         uses: JacobLinCool/Bahamut-Automation@v0.6.13
         with:
-          modules: "login,ad_handler,sign,report,guild,report,answer,report,lottery,report,logout,report,telegram"
+          modules: "login,ad_handler,sign,report,guild,report,answer,report,lottery,report,logout,report,discord"
           parameters: ${{ secrets.parameters || '{}' }}
           secrets: ${{ secrets.secrets }}
       - uses: gautamkrishnar/keepalive-workflow@master
